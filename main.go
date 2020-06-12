@@ -28,7 +28,11 @@ func fake(w http.ResponseWriter, r *http.Request) {
 	// 打印日志
 	fmt.Printf("url=%s\n", req.Tasks)
 
-	fmt.Fprintf(w, `{"code":200,"data":[{"code":200,"msg":"OK","results":[{"label":"normal","rate":99.91,"scene":"antispam","suggestion":"pass","details":[{"startTime":0,"endTime":26,"text":"快year of the good one so shy that thing need to be your shape of you some of from time to time。","label":"normal"}]}],"taskId":"vc_f_39ILHnyY4Cu7bioU8tJSXD-1sFxLr"}],"msg":"OK","requestId":"105C89C4-4AE8-4896-BD3E-21101F652658"}`)
+	str := `{"code":200,"data":[{"code":200,"msg":"OK","results":[{"label":"sexy","rate":99.91,"scene":"antispam","suggestion":"review","details":[{"startTime":0,"endTime":26,"text":"year of the good one so shy that thing need to be your shape of you some of from time to time。","label":"sexy"}]}],"taskId":"vc_f_39ILHnyY4Cu7bioU8tJSXD-1sFxLr"}],"msg":"OK","requestId":"105C89C4-4AE8-4896-BD3E-21101F652658"}`
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Length", fmt.Sprint(len(js)))
+	w.Write([]byte(str))
 }
 
 func main() {
