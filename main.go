@@ -28,7 +28,7 @@ func fake(w http.ResponseWriter, r *http.Request) {
 	// 打印日志
 	fmt.Printf("url=%s\n", req.Tasks)
 
-	str := `{"code":200,"data":[{"code":200,"msg":"OK","results":[{"label":"sexy","rate":99.91,"scene":"antispam","suggestion":"review","details":[{"startTime":0,"endTime":26,"text":"year of the good one so shy that thing need to be your shape of you some of from time to time。","label":"sexy"}]}],"taskId":"vc_f_39ILHnyY4Cu7bioU8tJSXD-1sFxLr"}],"msg":"OK","requestId":"105C89C4-4AE8-4896-BD3E-21101F652658"}`
+	str := `{"code":0,"message":"","result":{"detections":[{"class":"guns","pts":[[234,127],[730,127],[730,313],[234,313]],"score":0.9959627687931061},{"class":"guns","pts":[[711,548],[1093,548],[1093,779],[711,779]],"score":0.9943256378173828}]}}`
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Content-Length", fmt.Sprint(len(str)))
