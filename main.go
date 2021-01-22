@@ -31,6 +31,6 @@ func fake(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/fake", fake)
-	http.ListenAndServe(":2333", nil)
+	http.HandleFunc("/handler", fake)
+	http.ListenAndServe(":2048", nil)
 }
